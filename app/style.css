@@ -1,0 +1,153 @@
+/* DealHawk — Black Friday 2026. Dark shelves, amber price tags. */
+
+:root {
+  --ink: #f4efe6;
+  --muted: #b8b0a1;
+  --bg: #14100c;
+  --panel: #211b14;
+  --panel-2: #2b2318;
+  --line: #3d3222;
+  --amber: #ffb02e;
+  --red: #ff5a3c;
+  --green: #58d68d;
+  --blue: #6db3ff;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+a { color: var(--amber); }
+
+.site-head {
+  background: linear-gradient(135deg, #3a1503, #14100c 70%);
+  border-bottom: 3px solid var(--amber);
+  padding: 28px 0 20px;
+}
+.logo { font-size: 2rem; font-weight: 800; color: var(--ink); text-decoration: none; letter-spacing: -0.5px; }
+.tagline { color: var(--muted); margin: 6px 0 0; font-size: 1.05rem; }
+
+.toolbar { padding: 18px 0 6px; }
+.toolbar input[type="search"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.chip {
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.chip.on { background: var(--amber); border-color: var(--amber); color: #1a1206; font-weight: 700; }
+.sortrow { display: flex; align-items: center; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.sortrow select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.count { color: var(--muted); font-size: 0.9rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px 0 28px;
+}
+.grid.mini { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.card-top { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.cat, .store {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--panel-2);
+  color: var(--muted);
+}
+.verdict {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-left: auto;
+}
+.v-low { background: var(--red); color: #fff; }
+.v-strong { background: var(--green); color: #08230f; }
+.v-routine { background: var(--blue); color: #06182e; }
+.card h3 { margin: 12px 0 8px; font-size: 1.08rem; line-height: 1.3; }
+.card h3 a { color: var(--ink); text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.prices { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.sale { font-size: 1.7rem; font-weight: 800; color: var(--amber); }
+.prices.big .sale { font-size: 2.4rem; }
+.usual { color: var(--muted); }
+.pct {
+  font-weight: 800;
+  color: #fff;
+  background: var(--red);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.saved { color: var(--green); font-weight: 700; margin: 6px 0; }
+.evidence { color: var(--ink); margin: 4px 0; font-size: 0.95rem; }
+.also { color: var(--blue); margin: 4px 0; font-size: 0.9rem; }
+.checked { color: var(--muted); font-size: 0.82rem; margin: 8px 0 12px; }
+.cta {
+  margin-top: auto;
+  display: inline-block;
+  text-align: center;
+  background: var(--amber);
+  color: #1a1206;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 11px 14px;
+  border-radius: 9px;
+}
+.cta:hover { filter: brightness(1.08); }
+.cta.big { font-size: 1.1rem; padding: 14px 18px; margin: 14px 0; }
+
+.detail { padding: 20px 0 28px; }
+.detail h2 { font-size: 1.7rem; margin: 12px 0 6px; }
+.detail h4 { margin: 22px 0 6px; }
+.back { text-decoration: none; }
+.empty { padding: 40px 0; color: var(--muted); }
+
+footer { border-top: 1px solid var(--line); padding: 22px 0 34px; color: var(--muted); font-size: 0.88rem; }
+footer p { margin: 8px 0; }
+
+@media (max-width: 640px) {
+  .logo { font-size: 1.6rem; }
+  .sale { font-size: 1.45rem; }
+  .prices.big .sale { font-size: 2rem; }
+  .grid { grid-template-columns: 1fr; }
+  .detail h2 { font-size: 1.35rem; }
+}
