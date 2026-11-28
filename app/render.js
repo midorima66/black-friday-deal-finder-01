@@ -4,7 +4,7 @@
 // badge with its evidence, when the price was checked, and the store link.
 
 import { CHECKED_ON, DEALS } from './deals.js';
-import { savedAmount } from './filters.js';
+import { dealScore, savedAmount } from './filters.js';
 
 export function money(n) {
   return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -22,6 +22,7 @@ export function dealCard(deal) {
     <div class="card-top">
       <span class="cat">${deal.category}</span>
       <span class="store">${deal.store}</span>
+      <span class="score" title="Deal score: discount, dollars saved and verdict combined">Score ${dealScore(deal)}</span>
       ${verdictBadge(deal)}
     </div>
     <h3><a href="#/deal/${deal.id}">${deal.name}</a></h3>
@@ -55,10 +56,11 @@ export function dealDetail(deal) {
       <span class="pct">-${deal.pct}%</span>
     </div>
     <p class="saved">You save ${money(saved)} off the usual price of ${money(deal.usual)}.</p>
+    <p class="score-line">Deal score <strong>${dealScore(deal)} / 99</strong> — discount, dollars saved and the verdict below combined, so the best deals sort first.</p>
     <h4>Is it really a deal?</h4>
     <p>${deal.evidence}</p>
     ${deal.alsoAt ? `<p class="also">${deal.alsoAt}</p>` : ''}
-    <p class="checked">Price checked ${CHECKED_ON} (UTC morning) at ${deal.store}; reported by ${deal.source}. Prices can change or sell out — check the price at checkout.</p>
+    <p class="checked">Price checked ${CHECKED_ON} at ${deal.store}; reported by ${deal.source}. Prices can change or sell out — check the price at checkout.</p>
     <a class="cta big" href="${deal.url}" target="_blank" rel="noopener">View at ${deal.store} ↗</a>
     <h4>More ${deal.category} deals</h4>
     <div class="grid mini">${siblings.map(dealCard).join('')}</div>

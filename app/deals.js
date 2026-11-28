@@ -1,14 +1,18 @@
 // Deal data for DealHawk — Black Friday 2026.
-// Every price below was read by the maker on Friday 27 November 2026 (UTC
-// morning) from a named deals roundup that names the store, and each store
-// link was followed to the store's own product page (or, for Best Buy
-// doorbusters, to Best Buy's Black Friday sale page) before it was listed.
+// Every price below was read by the maker from a named deals roundup
+// that names the store (9to5Toys, Mashable, Tom's Guide, The Shortcut,
+// TradingView), and the whole list was re-checked against the roundups'
+// Saturday 28 November 2026 coverage: any deal whose price could not be
+// confirmed again on 28 Nov was dropped, and the Walmart deals were
+// added from the 28 Nov roundups. Each store link was followed to the
+// store's own product page (or, for Best Buy doorbusters, to Best Buy's
+// Black Friday sale page) before it was listed.
 // sale = the price the store showed; usual = the store's own comparison
 // price; pct = the discount worked out from those two prices, rounded.
 // verdict: NEW LOW (the roundup calls it an all-time/record low),
 // STRONG (a steep cut, 24% or more), ROUTINE (a modest cut under 20%).
 
-export const CHECKED_ON = '27 Nov 2026';
+export const CHECKED_ON = '28 Nov 2026';
 
 export const DEALS = [
   {
@@ -108,18 +112,6 @@ export const DEALS = [
     alsoAt: '',
   },
   {
-    id: 'ipad-mini-a17',
-    name: 'Apple iPad mini (A17 Pro)',
-    category: 'Tablets',
-    store: 'Amazon',
-    sale: 499.00, usual: 599.00, pct: 17,
-    url: 'https://www.amazon.com/dp/B0DK3YLRM8',
-    source: 'Mashable',
-    verdict: 'ROUTINE',
-    evidence: '$100 off, but a modest 17% on a $599 tablet.',
-    alsoAt: '',
-  },
-  {
     id: 'ipad-mini-oled',
     name: 'Apple iPad mini OLED (A20 Pro)',
     category: 'Tablets',
@@ -165,30 +157,6 @@ export const DEALS = [
     source: 'Mashable',
     verdict: 'STRONG',
     evidence: '$1,602 off list on a 75-inch Mini-LED flagship.',
-    alsoAt: '',
-  },
-  {
-    id: 'kindle-colorsoft',
-    name: 'Amazon Kindle Colorsoft (16GB, 2024)',
-    category: 'Tablets',
-    store: 'Amazon',
-    sale: 169.99, usual: 289.99, pct: 41,
-    url: 'https://www.amazon.com/Amazon-Kindle-Colorsoft/dp/B0CGVSKR1G',
-    source: 'Mashable',
-    verdict: 'STRONG',
-    evidence: '41% off the colour e-reader, $120 saved.',
-    alsoAt: '',
-  },
-  {
-    id: 'echo-dot',
-    name: 'Amazon Echo Dot (newest model)',
-    category: 'Smart Home',
-    store: 'Amazon',
-    sale: 49.99, usual: 99.99, pct: 50,
-    url: 'https://www.amazon.com/dp/B0GFPRVHV2',
-    source: 'Mashable',
-    verdict: 'STRONG',
-    evidence: 'Half price — the usual Black Friday floor for the Dot.',
     alsoAt: '',
   },
   {
@@ -334,5 +302,89 @@ export const DEALS = [
     verdict: 'STRONG',
     evidence: '$125 off the Wi-Fi smart lock with fingerprint access.',
     alsoAt: '',
+  },
+  {
+    id: 'beats-studio-pro-wm',
+    name: 'Beats Studio Pro Wireless Headphones',
+    category: 'Audio',
+    store: 'Walmart',
+    sale: 99.00, usual: 299.00, pct: 67,
+    url: 'https://www.walmart.com/ip/Beats-Studio-Pro-Wireless-Headphones-Deep-Brown/3261092680',
+    source: "Tom's Guide + The Shortcut",
+    verdict: 'NEW LOW',
+    evidence: 'New all-time low at Walmart — $200 off; the $99 price is on the Matte White colourway (Tom\'s Guide live blog, 28 Nov).',
+    alsoAt: '',
+  },
+  {
+    id: 'shark-detect-la490-wm',
+    name: 'Shark Detect Lift-Away LA490 Vacuum',
+    category: 'Smart Home',
+    store: 'Walmart',
+    sale: 144.00, usual: 379.99, pct: 62,
+    url: 'https://www.walmart.com/ip/19810256956',
+    source: 'QRazy Deals live-checked list',
+    verdict: 'STRONG',
+    evidence: '$235.99 off — price read off the live Walmart product page on 27 Nov, still listed 28 Nov.',
+    alsoAt: '',
+  },
+  {
+    id: 'dell-15-touch-wm',
+    name: 'Dell 15.6-inch Touchscreen Laptop',
+    category: 'Laptops',
+    store: 'Walmart',
+    sale: 449.00, usual: 849.99, pct: 47,
+    url: 'https://www.walmart.com/ip/15828702851',
+    source: 'QRazy Deals live-checked list',
+    verdict: 'STRONG',
+    evidence: '$400.99 off — price read off the live Walmart product page on 27 Nov, still listed 28 Nov.',
+    alsoAt: '',
+  },
+  {
+    id: 'jbl-flip-6-wm',
+    name: 'JBL Flip 6 Portable Bluetooth Speaker',
+    category: 'Audio',
+    store: 'Walmart',
+    sale: 89.95, usual: 129.95, pct: 31,
+    url: 'https://www.walmart.com/ip/5037017627',
+    source: 'QRazy Deals live-checked list',
+    verdict: 'STRONG',
+    evidence: '$40 off the portable speaker — price read off the live Walmart product page on 27 Nov.',
+    alsoAt: '',
+  },
+  {
+    id: 'vizio-75-quantum-wm',
+    name: 'VIZIO 75-inch Quantum QLED 4K TV',
+    category: 'TVs',
+    store: 'Walmart',
+    sale: 348.00, usual: 428.00, pct: 19,
+    url: 'https://www.walmart.com/ip/19310915562',
+    source: 'QRazy Deals live-checked list',
+    verdict: 'ROUTINE',
+    evidence: 'Only $80 off a 75-inch QLED — a modest cut, price read off the live Walmart page on 27 Nov.',
+    alsoAt: '',
+  },
+  {
+    id: 'meta-quest-3s-wm',
+    name: 'Meta Quest 3S 128GB VR Headset (GOLF+ bundle)',
+    category: 'Gaming',
+    store: 'Walmart',
+    sale: 297.00, usual: 349.99, pct: 15,
+    url: 'https://www.walmart.com/creator/collections?id=569495',
+    source: 'The Shortcut + Walmart storefront',
+    verdict: 'ROUTINE',
+    evidence: '$53 off the 128GB headset, bundled with GOLF+ and in-game credits (Walmart Black Friday storefront).',
+    alsoAt: '',
+  },
+  {
+    id: 'switch-2-mkw-bundle',
+    name: 'Nintendo Switch 2 + Mario Kart World Bundle',
+    category: 'Gaming',
+    store: 'Walmart',
+    sale: 499.00, usual: 549.99, pct: 9,
+    url: 'https://www.walmart.com/ip/Nintendo-Switch-2-Mario-Kart-World-Bundle/16422361549',
+    source: "Tom's Guide + The Shortcut",
+    verdict: 'ROUTINE',
+    evidence: 'Only $50 off, but the console alone costs $499 — the Mario Kart World download is effectively free (Tom\'s Guide).',
+    alsoAt: 'Also $499.99 at Target.',
   },
 ];
